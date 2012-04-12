@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="JP">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" >
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("form").submit(function(){
+				var keyword = $(":text").val()+" lang:ja";
+				$.getJSON('http://search.twitter.com/search.json?callback=?',
+					{
+					q: keyword
+					},test);
+				return false;
+			});
+			function test(data,status){
+				if(status=="success"){
+					for(var i=0;i<10;i++){
+						$("#search").after("<div class='post post"+i+"'>"+data.results[i].text+"</div>");
+						//$(".post"+i).slideDown("fast");
+						$(".post"+i).fadeIn("slow").animate({ 'marginTop':"10px"});
+					}
+			　	}else{
+					alert("処理に失敗しました");
+				}
+			}
+		});
+	</script>
+	<title>つゐったー検索</title>
+</head>
+<body>
+		<form>
+			<input type="text" name="keyword" value="" placeholder="つゐったー検索（日本語のみ）" />
+			<input type="submit" value="健作" method="POST" /> 
+		</form>
+	<div id="search">
+	
+	</div>
+</body>
+</html>
