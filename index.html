@@ -32,7 +32,7 @@
 						var postId = data.results[i].id_str;
 						var userProfile = "http://twitter.com/#!/"+user;
 						var parmaLink = "http://twitter.com/#!/"+user+"/status/"+postId;
-						$("#search").prepend("<div class='post post"+i+"'><p class='icon'><a href='"+userProfile+" ' target='_blank'><img src='"+profileImageUrl+"' / alt='"+user+"' /></a></p><div class='wrapper'><p class='user'><a href='"+userProfile+"' target='_blank'>"+user+"</a></p><p class='text'>"+text+"</p><p class='created'><a href='"+parmaLink+"' target='_blank'>"+created+"</p></div></div>");
+						$("#search").append("<div class='post post"+i+"'><p class='icon'><a href='"+userProfile+" ' target='_blank'><img src='"+profileImageUrl+"' / alt='"+user+"' /></a></p><div class='wrapper'><p class='user'><a href='"+userProfile+"' target='_blank'>"+user+"</a></p><p class='text'>"+text+"</p><p class='created'><a href='"+parmaLink+"' target='_blank'>"+created+"</p></div></div>");
 						//$(".post"+i).slideDown("fast");
 						$(".post"+i).fadeIn("slow").animate({ 'marginTop':"10px"});
 					}
