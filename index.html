@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" >
 	<meta name="format-detection" content="telephone=no" />
+	<link rel="shortcut icon" href="http://crow.ly/img/favicon.ico"  type="image/x-icon" >
 	<link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
 	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
@@ -27,7 +28,7 @@
 						var user = data.results[i].from_user;
 						var created = data.results[i].created_at;
 						var source = data.results[i].source;
-						var postId = data.results[i].id;
+						var postId = data.results[i].id_str;
 						var userProfile = "http://twitter.com/#!/"+user;
 						var parmaLink = "http://twitter.com/#!/"+user+"/status/"+postId;
 						$("#search").after("<div class='post post"+i+"'><p class='icon'><a href='"+userProfile+" ' target='_blank'><img src='"+profileImageUrl+"' / alt='"+user+"' /></a></p><div class='wrapper'><p class='user'><a href='"+userProfile+"' target='_blank'>"+user+"</a></p><p class='text'>"+text+"</p><p class='created'><a href='"+parmaLink+"' target='_blank'>"+created+"</p></div></div>");
